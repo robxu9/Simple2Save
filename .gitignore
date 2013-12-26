@@ -1,0 +1,56 @@
+# Eclipse
+*.pydevproject
+.metadata
+.gradle
+bin/
+tmp/
+*.tmp
+*.bak
+*.swp
+*~.nib
+local.properties
+.settings/
+.classpath
+.project
+.loadpath
+
+.externalToolBuilders/
+*.launch
+.cproject
+.buildpath
+.texlipse
+
+# JetBrains
+.idea/
+*.ipr
+*.iws
+*.iml
+out/
+.idea_modules/
+
+# Linux
+*~
+
+# Sublime Text
+*.sublime-workspace
+
+# vim
+[._]*.s[a-w][a-z]
+[._]s[a-w][a-z]
+*.un~
+Session.vim
+.netrwhist
+
+# Java
+*.class
+.mtj.tmp/
+.jar
+.war
+.ear
+
+# Maven
+target/
+pom.xml.tag
+pom.xml.releaseBackup
+pom.xml.next
+release.properties
