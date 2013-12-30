@@ -1,46 +1,22 @@
 package com.xu_robert.simple2save;
 
-public abstract class Database {
-	
-	private static Database CONNECTION = null;
-	private static DatabaseFactory FACTORY = null;
-	private static String PREFIX = "";
-	
-	public static DatabaseFactory getFactory() {
-		return FACTORY;
-	}
-	
-	public static void setFactory(DatabaseFactory factory) {
-		FACTORY = factory;
-	}
-	
-	public static void registerClass(Class<?> clazz) {
-		
-	}
-	
-	public static String getPrefix() {
-		return PREFIX;
-	}
-	
-	public static void setPrefix(String prefix) {
-		PREFIX = prefix;
-	}
-	
-	public static void connect() {
-		CONNECTION = FACTORY.getDatabase();
-	}
-	
-	public static void disconnect() {
-		CONNECTION.die();
-		CONNECTION = null;
-	}
+public interface Database {
 
-	protected abstract void die();
-	
-	public abstract <E> Query<E> queryDB(Class<E> clazz);
-	public abstract <E> Condition<E> makeCondition(Class<E> clazz);
-	
-	public abstract void loadRelations(Object obj, String fieldName);
-	//public abstract ManageM2M manageM2M(Object obj, String fieldName);
-	
+	void disconnect();
+
+	<E> Result<E> clear(Class<E> clazz);
+
+	<E> Result<E> insert(Object obj);
+
+	<E> Result<E> update(Object obj);
+
+	<E> Result<E> remove(Object obj);
+
+	<E> Query<E> query(Class<E> clazz);
+
+	<E> Condition<E> makeCondition(Class<E> clazz);
+
+	void loadRelations(Object obj, String fieldName);
+	//M2MHelper loadM2M(Object obj, String fieldName);
+
 }
