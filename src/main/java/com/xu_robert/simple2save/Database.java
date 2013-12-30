@@ -1,5 +1,8 @@
 package com.xu_robert.simple2save;
 
+import com.xu_robert.simple2save.query.Condition;
+import com.xu_robert.simple2save.query.Query;
+
 public interface Database {
 
 	void disconnect();

@@ -1,4 +1,4 @@
-package com.xu_robert.simple2save;
+package com.xu_robert.simple2save.annotation;
 
 public enum Relationship {
 	ONE2ONE,
