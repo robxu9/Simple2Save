@@ -10,6 +10,14 @@ public interface DatabaseFactory {
 	String getPrefix();
 
 	/**
+	 * Register a model with the database factory.
+	 *
+	 * @param model Database Model
+	 * @return this DatabaseFactory
+	 */
+	DatabaseFactory registerModel(Class<? extends Model> model);
+
+	/**
 	 * Set the prefix for each table
 	 *
 	 * @param prefix Table prefix
